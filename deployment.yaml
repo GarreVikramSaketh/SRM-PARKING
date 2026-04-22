@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: srm-parking
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: srm-parking
+  template:
+    metadata:
+      labels:
+        app: srm-parking
+    spec:
+      containers:
+      - name: srm-parking
+        image: vikramsakethgarre/srm-parking:v1
+        ports:
+        - containerPort: 3000
