@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE = "vikramsakethgarre/srm-parking:v1"
+        IMAGE = "vikamsakethgarre/srm-parking:v1"
     }
 
     stages {
