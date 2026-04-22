@@ -13,13 +13,13 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build') {
             steps {
                 sh 'docker build -t $IMAGE .'
             }
         }
 
-        stage('Push to Docker Hub') {
+        stage('Push') {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub-creds',
@@ -34,7 +34,7 @@ pipeline {
             }
         }
 
-        stage('Deploy to Kubernetes') {
+        stage('Deploy') {
             steps {
                 sh 'kubectl apply -f deployment.yaml'
             }
